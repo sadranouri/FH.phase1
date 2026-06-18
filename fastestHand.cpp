@@ -960,6 +960,7 @@ bool FastestHand::casualShoot(Invitation* invite, Player* current_player, Player
     }
 
     current_player->performAction(SHOOT);
+    other_player->performAction(other_player->getCasualGameStatus().act);
     if(other_player->getCasualGameStatus().act == SHOOT)
     {
         current_player->addAct(SHOOT);
@@ -998,6 +999,7 @@ bool FastestHand::casualReload(Invitation* invite, Player* current_player, Playe
     }
     
     current_player->performAction(RELOAD);
+    other_player->performAction(other_player->getCasualGameStatus().act);
     if(other_player->getCasualGameStatus().act == RELOAD)
     {
         current_player->addAct(RELOAD);
@@ -1033,7 +1035,9 @@ void FastestHand::casualDefend(Invitation* invite, Player* current_player, Playe
     {
         current_player->changeCasualAct(DEFEND);
     }
-    else if(other_player->getCasualGameStatus().act == SHOOT)
+    
+    other_player->performAction(other_player->getCasualGameStatus().act);
+    if(other_player->getCasualGameStatus().act == SHOOT)
     {
         current_player->addAct(DEFEND);
         other_player->addAct(SHOOT);
