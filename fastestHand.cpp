@@ -428,6 +428,9 @@ bool FastestHand::wrongPassword(string username, string password)
 
 void FastestHand::logout()
 {
+    string dummy;
+    getline(cin, dummy);
+
     if(session.isPlayer == false && session.isAdmin == false)
     {
         cout << PERMISSION_DENIED << endl;
