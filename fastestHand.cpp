@@ -566,7 +566,7 @@ vector<Player> FastestHand::inOrderReadyPlayers(string order_type)
 
     for(auto player : players)
     {
-        if(player.getReadyStatus() == true)
+        if(player.getReadyStatus() == true && player.getUsername() != session.username)
         {
             in_order_players.push_back(player);
         }
