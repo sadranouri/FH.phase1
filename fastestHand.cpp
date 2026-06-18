@@ -877,7 +877,6 @@ void FastestHand::performAction(Invitation* invite, string act)
                 other_player->decreaseXP(match_xp);
                 current_player->endCasualGame();
                 other_player->endCasualGame();
-                return;
             }
         }
         else if(act == RELOAD)
@@ -892,7 +891,6 @@ void FastestHand::performAction(Invitation* invite, string act)
                 other_player->increaseXP(match_xp);
                 current_player->endCasualGame();
                 other_player->endCasualGame();
-                return;
             }
         }
         else if(act == DEFEND)
@@ -923,7 +921,6 @@ void FastestHand::performAction(Invitation* invite, string act)
                 other_player->decreaseXP(match_xp);
                 current_player->endCasualGame();
                 other_player->endCasualGame();
-                return;
             }
         }
         else if(act == RELOAD)
@@ -938,7 +935,6 @@ void FastestHand::performAction(Invitation* invite, string act)
                 other_player->increaseXP(match_xp);
                 current_player->endCasualGame();
                 other_player->endCasualGame();
-                return;
             }
         }
         else if(act == DEFEND)
