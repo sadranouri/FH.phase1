@@ -192,6 +192,8 @@ void FastestHand::post(string command)
     else
     {
         cout << NOT_FOUND << endl;
+        string dummy;
+        getline(cin, dummy);
     }
 }
 
@@ -221,6 +223,8 @@ void FastestHand::get(string command)
     else
     {
         cout << NOT_FOUND << endl;
+        string dummy;
+        getline(cin, dummy);
     }
 }
 
