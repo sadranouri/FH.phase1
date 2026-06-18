@@ -702,6 +702,12 @@ void FastestHand::startMatch()
         return i.id == invitation_id && i.isFinished == false;
     });
 
+    if(session.isPlayer == false)
+    {
+        cout << PERMISSION_DENIED << endl;
+        return;
+    }
+
     if(i_it == invitations.end())
     {
         cout << NOT_FOUND << endl;
@@ -709,7 +715,7 @@ void FastestHand::startMatch()
     }
 
 
-    if(session.isPlayer == false || session.username != i_it->invited)
+    if(session.username != i_it->invited)
     {
         cout << PERMISSION_DENIED << endl;
         return;
@@ -832,7 +838,7 @@ void FastestHand::action()
 
 
     vector<Invitation>::iterator i_it = find_if(invitations.begin(), invitations.end(), [&](Invitation i){
-        return i.isAccepted == true && (i.invited == session.username || i.inviter == session.username);
+        return i.isAccepted == true && i.isFinished == false && (i.invited == session.username || i.inviter == session.username);
     });
 
 
