@@ -953,13 +953,14 @@ void FastestHand::performAction(Invitation* invite, string act)
 
 bool FastestHand::casualShoot(Invitation* invite, Player* current_player, Player* other_player)
 {
-    current_player->performAction(SHOOT);
     if(other_player->getCasualGameStatus().act == "")
     {
         current_player->changeCasualAct(SHOOT);
         return false;
     }
-    else if(other_player->getCasualGameStatus().act == SHOOT)
+
+    current_player->performAction(SHOOT);
+    if(other_player->getCasualGameStatus().act == SHOOT)
     {
         current_player->addAct(SHOOT);
         other_player->addAct(SHOOT);
@@ -990,13 +991,14 @@ bool FastestHand::casualShoot(Invitation* invite, Player* current_player, Player
 
 bool FastestHand::casualReload(Invitation* invite, Player* current_player, Player* other_player)
 {
-    current_player->performAction(RELOAD);
     if(other_player->getCasualGameStatus().act == "")
     {
         current_player->changeCasualAct(RELOAD);
         return true;
     }
-    else if(other_player->getCasualGameStatus().act == RELOAD)
+    
+    current_player->performAction(RELOAD);
+    if(other_player->getCasualGameStatus().act == RELOAD)
     {
         current_player->addAct(RELOAD);
         other_player->addAct(RELOAD);
