@@ -169,10 +169,6 @@ void FastestHand::post(string command)
     {
         casualMatchReady();
     }
-    else if(command == "casual_match_opponents")
-    {
-        casualMatchOpponents();
-    }
     else if(command == "invitation")
     {
         invitation();
@@ -217,6 +213,10 @@ void FastestHand::get(string command)
     else if(command == "reports")
     {
         reportsOutput();
+    }
+    else if(command == "casual_match_opponents")
+    {
+        casualMatchOpponents();
     }
     else
     {
