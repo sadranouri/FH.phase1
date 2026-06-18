@@ -890,7 +890,7 @@ void FastestHand::performAction(Invitation* invite, string act)
                 invite->isFinished = true;
                 invite->winner = other_player->getUsername();
                 invite->loser = current_player->getUsername();
-                double match_xp = casualXP((*current_player), (*other_player));
+                double match_xp = casualXP((*other_player), (*current_player));
                 current_player->decreaseXP(match_xp);
                 other_player->increaseXP(match_xp);
                 current_player->endCasualGame();
@@ -934,7 +934,7 @@ void FastestHand::performAction(Invitation* invite, string act)
                 invite->isFinished = true;
                 invite->winner = other_player->getUsername();
                 invite->loser = current_player->getUsername();
-                double match_xp = casualXP((*current_player), (*other_player));
+                double match_xp = casualXP((*other_player), (*current_player));
                 current_player->decreaseXP(match_xp);
                 other_player->increaseXP(match_xp);
                 current_player->endCasualGame();
